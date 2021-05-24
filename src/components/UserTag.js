@@ -50,18 +50,18 @@ function UserTag() {
       </div>
       <hr className="dropdown-divider" />
       <div className="socialInfo d-flex justify-content-start flex-wrap mb-3">
-        <a className="link-secondary text-decoration-none no-wrap" href={userInfo.followers_url}>
+        <a className="link-secondary text-decoration-none no-wrap" href={userInfo.html_url + "?tab=followers"} target="_blank" rel="noreferrer" >
         <i className="bi bi-people"></i>
         <span className="px-1">{userInfo.followers}</span>
          Followers
          <span className="px-1">·</span>
         </a>
-        <a className="link-secondary text-decoration-none no-wrap" href={userInfo.following_url}>
+        <a className="link-secondary text-decoration-none no-wrap" href={userInfo.html_url + "?tab=following"} target="_blank" rel="noreferrer" >
         <span className="px-1">{userInfo.following}</span>
          Following
          <span className="px-1">·</span>
         </a>
-        <a className="link-secondary text-decoration-none no-wrap" href={userInfo.starred_url}>
+        <a className="link-secondary text-decoration-none no-wrap" href={userInfo.html_url + "?tab=stars"} target="_blank" rel="noreferrer" >
         <i className="bi bi-star"></i>
         <span className="px-1">{fetchedInfo.starNumbers}</span>
         </a>

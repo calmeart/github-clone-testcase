@@ -31,7 +31,7 @@ function Repository({ isMobile, repoNum, setRepoNum }) {
     <>
       {isMobile && <RepositoryMenu repoNum={repoNum}/>}
       <form className="d-flex g-3 align-items-center mb-3">
-        <input className="form-control flex-grow-1 me-2" type="search" placeholder="Search" value={searchInput} onChange={handleSearchChange} aria-label="Search" />
+        <input className="form-control flex-grow-1 me-2" type="search" placeholder="Find a repository..." value={searchInput} onChange={handleSearchChange} aria-label="Search" />
         <div className="dropdown">
           <button className="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false" data-bs-offset="5,10">
             Language
