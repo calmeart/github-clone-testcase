@@ -35,11 +35,20 @@ function RepositoryList({ createLanguageList, searchInput, selectLanguage }) {
     reposFilteredByLanguage = repos.filter(repo => repo.language === selectLanguage);
   }
 
+  let reposFiltered = reposFilteredByLanguage.filter(repo => repo.name.toLowerCase().includes(searchInput.toLowerCase()) || (repo.description !== null && repo.description.toLowerCase().includes(searchInput.toLowerCase()) ))
+
   return (
     <div className="repositoryList">
-      {reposFilteredByLanguage
-        .filter(repo => repo.name.toLowerCase().includes(searchInput) || (repo.description !== null && repo.description.toLowerCase().includes(searchInput) ))
-        .map(item => <RepositoryCard key={item.id} item={item} />)}
+      {(searchInput !== "" || selectLanguage !== "All") && (<div className="card">
+        <div className="card-body">
+          <p className="card-text">
+            <span className="fw-bold">{reposFiltered.length}</span> result for repositories
+            {searchInput !== "" && <span> matching <span className="fw-bold">{searchInput}</span></span> }
+            {selectLanguage !== "All" && <span> written in <span className="fw-bold">{selectLanguage}</span></span>}
+          </p>
+        </div>
+      </div>)}
+      {reposFiltered.map(item => <RepositoryCard key={item.id} item={item} />)}
     </div>
   )
 }

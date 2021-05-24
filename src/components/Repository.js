@@ -24,7 +24,7 @@ function Repository({ isMobile, repoNum, setRepoNum }) {
 
   const handleSearchChange = (e) =>  {
     const { value } = e.target
-    setSearchInput(value.toLowerCase());
+    setSearchInput(value);
   };
 
   return (
