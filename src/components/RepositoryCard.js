@@ -9,7 +9,7 @@ function RepositoryCard({ item }) {
         <a className="text-decoration-none fs-4" href={item.url}>{item.name}</a>
         <p className="mt-4 card-text">{item.description}</p>
 
-        <div className="d-flex">
+        <div className="d-flex flex-wrap">
           <p className="repoText mx-2 mb-1"><i className="bi bi-circle-fill"></i> {item.language}</p>
           <a className="repoText mx-2 text-decoration-none mb-1" href={item.html_url + "/stargazers"}><i className="bi bi-star"></i> {item.stargazers_count}</a>
           <a className="repoText mx-2 text-decoration-none mb-1" href={item.html_url + "/network/members"}><i className="fas fa-code-branch"></i> {item.forks}</a>
