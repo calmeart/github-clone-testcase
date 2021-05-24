@@ -36,18 +36,20 @@ function Repository({ isMobile, repoNum, setRepoNum }) {
           <button className="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false" data-bs-offset="5,10">
             Language
           </button>
-          <div className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-            <div className="form-check">
-              <input className="form-check-input" type="radio" name="language" id="exampleRadios1" value="All" checked={selectLanguage === "All" ? true : false} onChange={handleFormClick}/>
-              <label className="form-check-label" htmlFor="exampleRadios1">
+          <div className="dropdown-menu languageCheckBox" aria-labelledby="dropdownMenuButton1">
+            <div className="formCheck">
+              <input type="radio" name="language" id="exampleRadios1" value="All" checked={selectLanguage === "All" ? true : false} onChange={handleFormClick}/>
+              <span className="radioCheck">{selectLanguage === "All" && <i class="bi bi-check"></i>}</span>
+              <label htmlFor="exampleRadios1">
                 All
               </label>
             </div>
             {languages.map(language => {
               return (
-                <div className="form-check" key={"Language" + language}>
-                  <input className="form-check-input" type="radio" name="language" value={language} checked={selectLanguage === language ? true : false} onChange={handleFormClick}/>
-                  <label className="form-check-label" htmlFor={language}>
+                <div className="formCheck" key={"Language" + language}>
+                  <input type="radio" name="language" id={language} value={language} checked={selectLanguage === language ? true : false} onChange={handleFormClick}/>
+                  <span className="radioCheck">{selectLanguage === language && <i class="bi bi-check"></i>}</span>
+                  <label htmlFor={language}>
                     {language}
                   </label>
                 </div>
